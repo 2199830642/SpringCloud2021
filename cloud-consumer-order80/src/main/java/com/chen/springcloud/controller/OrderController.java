@@ -60,9 +60,17 @@ public class OrderController {
         }
         ServiceInstance serviceInstance = loadBalancer.instances(instances);
         //URI uri = serviceInstance.getUri();
+
+        /*
         String serviceId = serviceInstance.getServiceId();
         System.out.println(serviceId);
 
         return restTemplate.getForObject("http://" + serviceId +"/payment/lb",String.class);
+        */
+
+        URI uri = serviceInstance.getUri();
+        System.out.println(uri);
+        return restTemplate.getForObject(uri+"/payment/lb",String.class);
+
     }
 }
