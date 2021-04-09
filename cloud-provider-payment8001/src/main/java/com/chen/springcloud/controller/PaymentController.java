@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /*@RestController相当于@Controller 和 @ResponseBody*/
 /*类上面添加@Sl4j注解,然后使用log打印日志*/
@@ -73,6 +74,16 @@ public class PaymentController {
     public String getPaymentLB()
     {
         System.out.println(1);
+        return serverPort;
+    }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentOpenFeignTimeout(){
+        try{
+            TimeUnit.SECONDS.sleep(3);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return serverPort;
     }
 

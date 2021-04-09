@@ -26,4 +26,10 @@ public class OrderFeignController {
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
         return paymentFeignService.getPaymentById(id);
     }
+
+    @GetMapping(value = "/consumer/payment/feign/timeout")
+    public String paymentOpenFeignTimeout(){
+        //openFeign-ribbon,客户端一般默认等待一秒钟，但是故意让支付侧业务反应3秒，然后就会超时报错
+        return paymentFeignService.paymentOpenFeignTimeout();
+    }
 }

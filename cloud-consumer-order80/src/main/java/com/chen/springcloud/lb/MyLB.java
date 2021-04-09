@@ -2,7 +2,6 @@ package com.chen.springcloud.lb;
 
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
