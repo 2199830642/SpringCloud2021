@@ -1,4 +1,4 @@
-package com.chen.myrule;
+package com.chen.springcloud.myrule;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
