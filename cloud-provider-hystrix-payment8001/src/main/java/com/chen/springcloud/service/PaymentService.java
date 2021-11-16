@@ -17,4 +17,6 @@ public interface PaymentService {
     public String PaymentInfo_Ok(Integer id);
 
     public String PaymentInfo_timeOut(Integer id);
+
+    public String PaymentInfo_timeOutHandler(Integer id);
 }

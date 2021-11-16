@@ -2,6 +2,7 @@ package com.chen.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient //本次服务启动后会自动注册进eureka服务注册中心
+@EnableCircuitBreaker //激活hystrix的@HystrixCommand注解
 public class PaymentHystrixMain8001 {
     public static void main(String[] args) {
         SpringApplication.run(PaymentHystrixMain8001.class,args);
