@@ -1,13 +1,14 @@
 package com.chen.springcloud.feign;
 
+import com.chen.springcloud.feign.impl.consumerImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@Service
-@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT")
+
+@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT",fallback = consumerImpl.class)
 public interface consumer {
 
     @GetMapping("/payment/hystrix/ok/{id}")

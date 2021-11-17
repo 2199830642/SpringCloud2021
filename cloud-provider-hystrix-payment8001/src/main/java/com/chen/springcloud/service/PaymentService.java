@@ -1,5 +1,7 @@
 package com.chen.springcloud.service;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 /**
  * @ClassName PaymentService
  * @Description TODO
@@ -16,7 +18,27 @@ public interface PaymentService {
      **/
     public String PaymentInfo_Ok(Integer id);
 
+    /**
+     * 正常访问不ok 
+     *
+     * @Author kaibo.chen
+     * @Date 16:32 2021/11/17
+     **/
     public String PaymentInfo_timeOut(Integer id);
 
+    /**
+     * PaymentInfo_timeOutHandler 不ok的兜底
+     *
+     * @Author kaibo.chen
+     * @Date 16:33 2021/11/17
+     **/
     public String PaymentInfo_timeOutHandler(Integer id);
+
+    /**
+     * paymentCircuitBreaker --服务熔断案例
+     *
+     * @Author kaibo.chen
+     * @Date 16:32 2021/11/17
+     **/
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id);
 }
